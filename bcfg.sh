@@ -29,30 +29,30 @@ if [ "$1" != "--debug" ]; then clear; fi
 parts=4
 echo
 echo "   ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐"
-echo "   │ Configurator                                                                         [part 1 of $parts] │"
+echo "   │ Конфигурация                                                                         [часть 1 из $parts] │"
 echo "   └────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 echo
 echo
-echo "      Welcome to the bConfigurator."
+echo "      Добро пожаловать в bConfigurator."
 echo
-echo "      We will ask you questions to set up all programs"
-echo "      Application changes will be after all questions."
+echo "      Мы предложим настроить все программы перед установкой"
+echo "      Приложения примут изменения после всех настроек."
 echo
-echo "       - Press ENTER to continue."
-echo "       - Press CTRL + C to exit."
+echo "       - Нажмите ENTER для продолжения."
+echo "       - Нажмите CTRL + C для выхода."
 echo
 pause
 if [ "$1" != "--debug" ]; then clear; fi
 echo
 echo "   ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐"
-echo "   │ Configurator                                                                         [part 2 of $parts] │"
+echo "   │ Конфигурация                                                                        [часть 2 из $parts] │"
 echo "   └────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 echo
 echo
-echo "        Install Batus or YDE?"
+echo "        Установить Batus или YDE?"
 echo
-echo "         - Type [B] to Batus"
-echo "         - Type [Y] to YDE."
+echo "         - Нажмите [B] что бы установить Batus"
+echo "         - Нажмите [Y] что бы установить YDE."
 echo
 read -sn1 two
 if [ "$two" == "Y" ] || [ "$two" == "y" ]; then yde; else confbat; fi
@@ -61,14 +61,14 @@ function yde(){
 if [ "$1" != "--debug" ]; then clear; fi
 echo
 echo "   ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐"
-echo "   │ Configurator                                                                         [part 3 of $parts] │"
+echo "   │ Конфигурация                                                                        [часть 3 из $parts] │"
 echo "   └────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 echo
 echo
-echo "        What version of YDE?"
+echo "        Какой релиз YDE вы хотите установить?"
 echo
-echo "         - Type [R] to install release version."
-echo "         - Type [D] to install debug dev version."
+echo "         - Напечатайте [R] для установки стабильной версии."
+echo "         - Напечатайте [D] для установки тестовой версии."
 echo
 read -sn1 yde
 confpath;}
@@ -76,15 +76,15 @@ function confbat(){
 if [ "$1" != "--debug" ]; then clear; fi
 echo
 echo "   ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐"
-echo "   │ Configurator                                                                         [part 3 of $parts] │"
+echo "   │ Конфигурация                                                                        [часть 3 из $parts] │"
 echo "   └────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 echo
 echo
-echo "        What Batus?"
+echo "        Какой вид Batus'а?"
 echo
-echo "         - Type [K] to Kdialog Batus."
-echo "         - Type [G] to Dialog Batus."
-echo "         - Type [T] to Text Batus."
+echo "         - Нажмите [K] для установки Kdialog Batus."
+echo "         - Нажмите [G] для установки Dialog Batus."
+echo "         - Нажмите [T] для установки Text Batus."
 # echo "         - Type [] to Graphical Dialog menu."
 # echo "         - Type [] to Text menu."
 echo
@@ -94,16 +94,16 @@ function confpath(){
 if [ "$1" != "--debug" ]; then clear; fi
 echo
 echo "   ┌────────────────────────────────────────────────────────────────────────────────────────────────────┐"
-echo "   │ Configurator                                                                         [part 4 of $parts] │"
+echo "   │ Конфигурация                                                                        [часть 4 из $parts] │"
 echo "   └────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 echo
 echo
-echo "        Select install path"
-echo "        Warning! To install in /home/$USER/.local/bin/ you need enable this path!"
-echo "        If you don't know how to enable it, install in /usr/bin!"
+echo "        Выберите путь установки"
+echo "        ВНИМАНИЕ! Для установки в /home/$USER/.local/bin/ вам нужно включить этот путь!"
+echo "        Если вы не знаете как включить, используйте:/usr/bin!"
 echo
-echo "         - Type [B] to /usr/bin/"
-echo "         - Type [L] to /home/$USER/.local/bin/"
+echo "         - Нажмите [B] для установки в /usr/bin/"
+echo "         - Нажмите [L] для установки в /home/$USER/.local/bin/"
 # echo "         - Type [Y] to Your custom path."
 echo
 read -sn1 ipath
@@ -135,7 +135,7 @@ wget https://raw.githubusercontent.com/Russanandres/YDE/main/de.sh
    sudo cp -v ./de.sh $path/$inst
    sudo chmod -v +x $path/$inst
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run YDE write $inst"
+   echo "Успешная установка! Для запуска YDE напишите $inst"
    exit
 }
 
@@ -145,7 +145,7 @@ wget https://raw.githubusercontent.com/Russanandres/YDE/main/dev.sh
    sudo cp -v ./dev.sh $path/$inst
    sudo chmod -v +x $path/$inst
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run YDE dev write $inst"
+   echo "Успешная установка! Для запуска YDE dev напишите $inst"
    exit
 }
 
@@ -156,7 +156,7 @@ sudo apt install kdialog
    sudo cp -v ./KBatus.sh $path/$inst
    sudo chmod -v +x $path/$inst
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run Batus write $inst"
+   echo "Успешная установка! Для запуска Batus напишите $inst"
    exit
 }
 
@@ -167,7 +167,7 @@ wget https://raw.githubusercontent.com/Russanandres/batus-linux/main/all%20versi
    sudo cp -v ./BatusLin.sh $path/$inst
    sudo chmod -v +x $path/$inst
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run Batus write $inst"
+   echo "Успешная установка! Для запуска Batus напишите $inst"
    exit
 }
 
@@ -176,7 +176,7 @@ wget https://raw.githubusercontent.com/Russanandres/batus-linux/main/For%20Legac
    sudo cp -v ./BFL.sh $path/$inst
    sudo chmod -v +x $path/$inst
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run BFL write $inst"
+   echo "Успешная установка! Для запуска BFL напишите $inst"
    exit
 }
 
@@ -184,11 +184,11 @@ wget https://raw.githubusercontent.com/Russanandres/batus-linux/main/For%20Legac
 
 
 if [ "$1" != "--debug" ]; then clear; fi
-echo -e "${BYellow}bConf ver$VER by Russanandres. Now is $(date)${No_color}"
+echo -e "${BYellow}bConf v1RU от Russanandres. Локализация от GareGun. Сейчас $(date)${No_color}"
 echo
 echo
-echo -e "${BIGreen}[c]${No_color} - ${BIBlue}Let me setup everything.${No_color}"
-echo -e "${BIGreen}[any button]${No_color} - ${BIRed}I NOTHING UNDERSTAND JUST INSTALL IT!!!${No_color}"
+echo -e "${BIGreen}[c]${No_color} - ${BIBlue}Дайте мне настроить все.${No_color}"
+echo -e "${BIGreen}[any button]${No_color} - ${BIRed}Я НИЧЕГО НЕ ПОНИМАЮ, ПРОСТО УСТАНОВИ!!!${No_color}"
 echo
 read -sn1 ch
 case "$ch" in
@@ -223,16 +223,16 @@ if [ "$?" != "0" ]; then
    cp -v ./$gitVER.sh $USER/.local/bin/kbatus
    chmod -v +x $USER/.local/bin/kbatus
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run Batus write kbatus"
+   echo "Успешная установка! Для запуска Batus напишите kbatus"
    exit
   fi
   echo
   echo
-  echo "To continue please enter admin password:"
+  echo "Для продолжения напишите пороль от Root пользователя:"
   sudo cp -v ./$gitVER.sh /usr/bin/kbatus
   sudo chmod -v +x /usr/bin/kbatus
   if [ "$1" != "--debug" ]; then clear; fi
-  echo "All done! To run Batus write kbatus"
+  echo "Успешная установка! Для запуска Batus напишите kbatus"
   exit
   fi
 fi
@@ -252,17 +252,17 @@ if [ "$?" != "0" ]; then
    cp -v ./$gitVER1.sh $USER/.local/bin/batus
    chmod -v +x $USER/.local/bin/batus
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run Batus write batus"
+   echo "Успешная установка! Для запуска Batus напишите batus"
    exit
   fi
   fi
   echo
   echo
-  echo "To continue please enter admin password:"
+  echo "Для продолжения напишите пороль от Root пользователя:"
   sudo cp -v ./$gitVER1.sh /usr/bin/batus
   sudo chmod -v +x /usr/bin/batus
   if [ "$1" != "--debug" ]; then clear; fi
-  echo "All done! To run Batus write batus"
+  echo "Успешная установка! Для запуска Batus напишите batus"
   exit
 fi
 
@@ -272,16 +272,16 @@ echo $PATH | grep "$USER/.local/bin"
    cp -v ./BFL.sh $USER/.local/bin/bfl
    chmod -v +x $USER/.local/bin/bfl
    if [ "$1" != "--debug" ]; then clear; fi
-   echo "All done! To run Batus write bfl"
+   echo "Успешная установка! Для запуска Batus напишите bfl"
    exit
   fi
   echo
   echo
-  echo "To continue please enter admin password:"
+  echo "Для продолжения напишите пороль от Root пользователя:"
   sudo cp -v ./BFL.sh /usr/bin/bfl
   sudo chmod -v +x /usr/bin/bfl
   if [ "$1" != "--debug" ]; then clear; fi
-  echo "All done! To run Batus write bfl"
+  echo "Успешная установка! Для запуска Batus напишите bfl"
   exit
 
 ;;
